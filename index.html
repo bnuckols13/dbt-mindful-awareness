@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Just This: DBT Mindful Awareness and Non-Judgment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:      #3A5A8A;
+      --blue-lt:   #6A8AB8;
+      --blue-dk:   #1E3A60;
+      --violet:    #7A60A8;
+      --violet-lt: #A890CC;
+      --violet-dk: #4E3A78;
+      --teal:      #3A8A8A;
+      --teal-lt:   #6AACAC;
+      --teal-dk:   #1E5C5C;
+      --rose:      #A86080;
+      --rose-lt:   #C890A8;
+      --rose-dk:   #783050;
+      --gold:      #B8903A;
+      --gold-pale: #F0DFB0;
+      --parchment: #F3EEE6;
+      --parchment-dk: #E8E0D0;
+      --parchment-lt: #FDFAF5;
+      --ink:       #1A1420;
+      --ink-2:     #3A2E48;
+      --ink-3:     #7A6890;
+      --shadow:    rgba(26,20,32,.10);
+      --shadow-lg: rgba(26,20,32,.18);
+
+      --g-blue:    linear-gradient(135deg, #3A5A8A 0%, #1E3A60 100%);
+      --g-violet:  linear-gradient(135deg, #7A60A8 0%, #4E3A78 100%);
+      --g-teal:    linear-gradient(135deg, #3A8A8A 0%, #1E5C5C 100%);
+      --g-rose:    linear-gradient(135deg, #A86080 0%, #783050 100%);
+      --g-gold:    linear-gradient(135deg, #C8A050 0%, #906818 100%);
+      --g-calm:    linear-gradient(135deg, #3A5A8A 0%, #7A60A8 100%);
+    }
+
+    body {
+      font-family: 'EB Garamond', Georgia, serif;
+      background-color: var(--parchment);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      min-height: 100vh;
+      color: var(--ink);
+      overflow-x: hidden;
+      line-height: 1.75;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 12% 30%, rgba(58,90,138,.08) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 45% at 88% 18%, rgba(122,96,168,.07) 0%, transparent 55%),
+        radial-gradient(ellipse 45% 40% at 55% 88%, rgba(58,138,138,.06) 0%, transparent 50%);
+      pointer-events: none; z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed; inset: 8px;
+      border: 1px solid rgba(122,96,168,.14);
+      pointer-events: none; z-index: 200;
+    }
+
+    .glyph {
+      position: fixed;
+      font-family: 'Cinzel', serif;
+      color: var(--violet-dk);
+      opacity: .032;
+      animation: glyph-drift 38s ease-in-out infinite;
+      pointer-events: none; user-select: none; z-index: 0;
+    }
+    .glyph-1 { font-size: 5rem; top: 5%;  left: 3%;  animation-delay: 0s; }
+    .glyph-2 { font-size: 3.5rem; top: 40%; right: 4%; animation-delay: -12s; }
+    .glyph-3 { font-size: 4.2rem; bottom: 18%; left: 8%; animation-delay: -22s; }
+    .glyph-4 { font-size: 2.8rem; top: 68%; right: 14%; animation-delay: -30s; }
+    @keyframes glyph-drift {
+      0%,100% { transform: translate(0,0) rotate(0deg); }
+      33%      { transform: translate(18px,-22px) rotate(5deg); }
+      66%      { transform: translate(-13px,15px) rotate(-3deg); }
+    }
+
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes breathe {
+      0%,100% { transform: scale(1); opacity: .8; }
+      50%      { transform: scale(1.04); opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 2rem 5rem;
+      position: relative; z-index: 1;
+    }
+
+    /* ─── Hero ─── */
+    .site-hero {
+      text-align: center;
+      padding: 3.5rem 1rem 2.5rem;
+      border-bottom: 1px solid rgba(122,96,168,.2);
+      margin-bottom: 2.4rem;
+    }
+    .hero-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: .68rem; letter-spacing: .5em;
+      text-transform: uppercase; color: var(--violet);
+      display: block; margin-bottom: 1rem;
+    }
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.9rem, 5vw, 2.75rem);
+      font-weight: 900; letter-spacing: .025em;
+      line-height: 1.15; color: var(--ink); margin-bottom: .6rem;
+    }
+    .hero-title em { font-style: normal; color: var(--violet-dk); }
+    .hero-sub { font-size: 1.1rem; font-style: italic; color: var(--ink-2); }
+    .hero-ornament {
+      display: flex; align-items: center; justify-content: center;
+      gap: 1.2rem; margin-top: 1.4rem;
+      color: var(--violet); font-size: .75rem; letter-spacing: .5em;
+    }
+
+    /* ─── Progress steps ─── */
+    .progress-strip {
+      display: flex; align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+      position: relative; padding: 0 .5rem;
+    }
+    .progress-strip::before {
+      content: '';
+      position: absolute; top: 14px; left: 10%; right: 10%;
+      height: 1px; background: rgba(122,96,168,.18); z-index: 0;
+    }
+    .progress-step {
+      display: flex; flex-direction: column; align-items: center;
+      flex: 1; cursor: pointer; position: relative; z-index: 1;
+    }
+    .step-dot {
+      width: 28px; height: 28px; border-radius: 50%;
+      border: 2px solid rgba(122,96,168,.3);
+      background: var(--parchment);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cinzel', serif; font-size: .6rem; font-weight: 700;
+      color: var(--ink-3); transition: all .3s; margin-bottom: .4rem;
+    }
+    .step-label {
+      font-family: 'Cinzel', serif; font-size: .56rem;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--ink-3); text-align: center;
+      transition: color .3s; opacity: .6;
+    }
+    .progress-step.active .step-dot {
+      background: var(--blue-dk); border-color: var(--blue-dk);
+      color: var(--gold-pale);
+      box-shadow: 0 0 0 4px rgba(26,20,32,.08);
+    }
+    .progress-step.active .step-label { color: var(--ink); opacity: 1; font-weight: 700; }
+    .progress-step.done .step-dot { background: var(--g-teal); border-color: var(--teal-dk); color: white; }
+    .progress-step.done .step-label { color: var(--teal-dk); opacity: .85; }
+
+    /* ─── Sections ─── */
+    .section { display: none; animation: reveal .45s ease; }
+    .section.active { display: block; }
+
+    /* ─── Cards ─── */
+    .card {
+      background: var(--parchment-lt);
+      border: 1px solid rgba(122,96,168,.15);
+      border-radius: 3px;
+      padding: 2rem 2.2rem;
+      margin-bottom: 1.8rem;
+      position: relative;
+      box-shadow: 0 4px 24px var(--shadow);
+    }
+    .card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; border-radius: 3px 3px 0 0;
+    }
+    .card.blue::before   { background: var(--g-blue); }
+    .card.violet::before { background: var(--g-violet); }
+    .card.teal::before   { background: var(--g-teal); }
+    .card.rose::before   { background: var(--g-rose); }
+    .card.gold::before   { background: var(--g-gold); }
+    .card.calm::before   { background: var(--g-calm); }
+
+    .card-hero { padding: 3rem 2.5rem 2.5rem; text-align: center; }
+
+    .card-header {
+      display: flex; align-items: center; gap: .8rem;
+      margin-bottom: 1.3rem; padding-bottom: .9rem;
+      border-bottom: 1px solid rgba(122,96,168,.13);
+      flex-wrap: wrap;
+    }
+    .card-header h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem; font-weight: 700;
+      letter-spacing: .03em; color: var(--ink);
+    }
+    .time-pill {
+      margin-left: auto;
+      font-family: 'Cinzel', serif; font-size: .63rem;
+      letter-spacing: .08em; color: var(--ink-3);
+      border: 1px solid rgba(122,96,168,.22);
+      padding: .18rem .65rem; border-radius: 2px; white-space: nowrap;
+    }
+
+    .icon-badge {
+      width: 40px; height: 40px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0; color: white;
+    }
+    .ib-blue   { background: var(--g-blue); }
+    .ib-violet { background: var(--g-violet); }
+    .ib-teal   { background: var(--g-teal); }
+    .ib-rose   { background: var(--g-rose); }
+    .ib-gold   { background: var(--g-gold); }
+    .ib-calm   { background: var(--g-calm); }
+
+    .body-text {
+      font-size: 1.05rem; line-height: 1.8;
+      color: var(--ink-2); margin-bottom: .9rem;
+    }
+    .body-text:last-child { margin-bottom: 0; }
+
+    /* ─── Pull quote ─── */
+    .pull-quote {
+      position: relative;
+      padding: 1.8rem 2.2rem 1.8rem 3rem;
+      margin: 1.8rem 0;
+    }
+    .pull-quote::before {
+      content: '\201C';
+      position: absolute; left: .2rem; top: -.4rem;
+      font-family: 'EB Garamond', serif; font-size: 5rem;
+      line-height: 1; color: var(--violet-lt); opacity: .45;
+      pointer-events: none;
+    }
+    .pull-quote p {
+      font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+      font-style: italic; line-height: 1.6;
+      color: var(--ink); font-weight: 400;
+    }
+    .pull-quote cite {
+      display: block; margin-top: .7rem;
+      font-size: .78rem; font-family: 'Cinzel', serif;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--violet-dk); font-style: normal;
+    }
+
+    /* ─── Ornament divider ─── */
+    .ornament-divider {
+      display: flex; align-items: center; gap: 1rem;
+      margin: 2rem 0; color: rgba(122,96,168,.4);
+    }
+    .ornament-divider::before, .ornament-divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: rgba(122,96,168,.18);
+    }
+    .ornament-divider span {
+      font-family: 'Cinzel', serif; font-size: .62rem;
+      letter-spacing: .35em; text-transform: uppercase; white-space: nowrap;
+    }
+
+    /* ─── Pass note ─── */
+    .pass-note {
+      display: flex; gap: .65rem;
+      background: rgba(58,138,138,.07);
+      border-left: 3px solid var(--teal);
+      padding: .8rem 1rem; border-radius: 0 4px 4px 0;
+      margin-bottom: 1.4rem;
+      font-size: 1rem; font-style: italic; color: var(--ink-2);
+    }
+    .pass-sym { color: var(--teal-dk); flex-shrink: 0; margin-top: .1rem; }
+
+    /* ─── Info blocks ─── */
+    .info-block {
+      padding: 1.1rem 1.4rem; border-radius: 3px; margin-bottom: 1rem;
+    }
+    .info-block h3 {
+      font-family: 'Cinzel', serif; font-size: .72rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase; margin-bottom: .6rem;
+    }
+    .info-block ul {
+      list-style: none; color: var(--ink-2); line-height: 1.9; font-size: 1rem;
+    }
+    .info-block ul li { padding-left: 1.1rem; position: relative; }
+    .info-block ul li::before {
+      content: '◆'; position: absolute; left: 0; top: .1rem;
+      font-size: .45rem; opacity: .7;
+    }
+    .ib-blue   { background: rgba(58,90,138,.07); }
+    .ib-blue h3  { color: var(--blue-dk); }
+    .ib-blue ul li::before { color: var(--blue); }
+    .ib-violet { background: rgba(122,96,168,.08); }
+    .ib-violet h3 { color: var(--violet-dk); }
+    .ib-violet ul li::before { color: var(--violet); }
+    .ib-teal   { background: rgba(58,138,138,.08); }
+    .ib-teal h3  { color: var(--teal-dk); }
+    .ib-teal ul li::before { color: var(--teal); }
+    .ib-rose   { background: rgba(168,96,128,.09); }
+    .ib-rose h3  { color: var(--rose-dk); }
+    .ib-rose ul li::before { color: var(--rose); }
+    .ib-gold   { background: rgba(184,144,58,.07); }
+    .ib-gold h3  { color: var(--gold); }
+    .ib-gold ul li::before { color: var(--gold); }
+
+    /* ─── Callout ─── */
+    .callout {
+      border-radius: 3px; padding: 1.3rem 1.6rem;
+      margin: 1.3rem 0; border: 1px solid;
+    }
+    .callout-label {
+      font-family: 'Cinzel', serif; font-size: .68rem; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      display: block; margin-bottom: .45rem;
+    }
+    .callout p { font-size: 1.05rem; font-style: italic; line-height: 1.75; color: var(--ink-2); }
+    .callout strong { font-style: normal; color: var(--ink); }
+    .callout.violet { background: rgba(122,96,168,.07); border-color: rgba(122,96,168,.28); }
+    .callout.violet .callout-label { color: var(--violet-dk); }
+    .callout.teal   { background: rgba(58,138,138,.07); border-color: rgba(58,138,138,.28); }
+    .callout.teal .callout-label   { color: var(--teal-dk); }
+    .callout.blue   { background: rgba(58,90,138,.07); border-color: rgba(58,90,138,.28); }
+    .callout.blue .callout-label   { color: var(--blue-dk); }
+    .callout.rose   { background: rgba(168,96,128,.07); border-color: rgba(168,96,128,.28); }
+    .callout.rose .callout-label   { color: var(--rose-dk); }
+
+    /* ─── Three minds display ─── */
+    .minds-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: .5rem; align-items: stretch;
+      margin: 1.4rem 0;
+    }
+    @media (max-width: 640px) {
+      .minds-row { grid-template-columns: 1fr; }
+      .minds-arrow { justify-self: center; transform: rotate(90deg); }
+    }
+    .mind-node {
+      background: var(--parchment-lt);
+      border: 1px solid rgba(122,96,168,.2);
+      border-radius: 3px; padding: 1.2rem 1.1rem;
+      text-align: center;
+      box-shadow: 0 3px 12px var(--shadow);
+    }
+    .mind-node-label {
+      font-family: 'Cinzel', serif; font-size: .65rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      margin-bottom: .4rem; display: block;
+    }
+    .mind-node-name {
+      font-family: 'Cinzel', serif; font-size: 1rem;
+      font-weight: 700; color: var(--ink); margin-bottom: .4rem;
+    }
+    .mind-node-desc { font-size: .92rem; font-style: italic; color: var(--ink-2); line-height: 1.55; }
+    .mn-emotion .mind-node-label { color: var(--rose-dk); }
+    .mn-wise    .mind-node-label { color: var(--violet-dk); }
+    .mn-wise    { border-color: rgba(122,96,168,.35); background: rgba(122,96,168,.04); }
+    .mn-reason  .mind-node-label { color: var(--blue-dk); }
+    .minds-arrow { display: flex; align-items: center; color: rgba(122,96,168,.4); font-size: 1.2rem; padding-top: 1rem; }
+
+    /* ─── Skill cards (What/How) ─── */
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+      gap: 1.1rem; margin-bottom: 1.5rem;
+    }
+    .sc {
+      background: var(--parchment-lt);
+      border: 1px solid rgba(122,96,168,.16);
+      border-radius: 3px; overflow: hidden;
+      transition: transform .28s, box-shadow .28s;
+    }
+    .sc:hover { transform: translateY(-3px); box-shadow: 0 10px 30px var(--shadow-lg); }
+    .sc-top {
+      display: flex; align-items: center; gap: .75rem;
+      padding: .85rem 1.15rem;
+    }
+    .sc-top .sc-emoji { font-size: 1.25rem; }
+    .sc-top h3 {
+      font-family: 'Cinzel', serif; font-size: .68rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: rgba(255,255,255,.94); line-height: 1.4;
+    }
+    .sc-blue   .sc-top { background: var(--g-blue); }
+    .sc-violet .sc-top { background: var(--g-violet); }
+    .sc-teal   .sc-top { background: var(--g-teal); }
+    .sc-rose   .sc-top { background: var(--g-rose); }
+    .sc-body {
+      padding: .9rem 1.15rem 1.1rem;
+      font-size: .97rem; color: var(--ink-2); line-height: 1.72;
+    }
+    .sc-body em { font-style: italic; color: var(--ink-3); font-size: .9rem; display: block; margin-top: .4rem; }
+
+    /* ─── Judgment vs description table ─── */
+    .jd-table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; }
+    .jd-table th {
+      font-family: 'Cinzel', serif; font-size: .68rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: .7rem 1rem; text-align: left;
+    }
+    .jd-table th.jd-j { background: rgba(168,96,128,.12); color: var(--rose-dk); }
+    .jd-table th.jd-d { background: rgba(58,138,138,.10); color: var(--teal-dk); }
+    .jd-table td {
+      padding: .75rem 1rem; font-size: .97rem; color: var(--ink-2);
+      line-height: 1.6; font-style: italic; vertical-align: top;
+    }
+    .jd-table tr:nth-child(even) td.jd-j { background: rgba(168,96,128,.04); }
+    .jd-table tr:nth-child(even) td.jd-d { background: rgba(58,138,138,.04); }
+    .jd-table tr:nth-child(odd) td.jd-j  { background: rgba(168,96,128,.02); }
+    .jd-table tr:nth-child(odd) td.jd-d  { background: rgba(58,138,138,.02); }
+    .jd-table td { border-bottom: 1px solid rgba(122,96,168,.08); }
+
+    /* ─── Practice exercise block ─── */
+    .practice-block {
+      background: rgba(122,96,168,.05);
+      border: 1px solid rgba(122,96,168,.2);
+      border-radius: 3px; padding: 1.5rem 1.8rem;
+      margin: 1.3rem 0;
+    }
+    .practice-label {
+      font-family: 'Cinzel', serif; font-size: .68rem; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--violet-dk); display: block; margin-bottom: .7rem;
+    }
+    .practice-block p {
+      font-size: 1rem; color: var(--ink-2); line-height: 1.8; margin-bottom: .6rem;
+    }
+    .practice-block p:last-child { margin-bottom: 0; }
+    .practice-block strong { color: var(--ink); }
+
+    /* ─── Breathe animation ─── */
+    .breathe-circle {
+      width: 80px; height: 80px; border-radius: 50%;
+      border: 2px solid rgba(122,96,168,.35);
+      margin: 1rem auto;
+      background: radial-gradient(circle, rgba(122,96,168,.12) 0%, rgba(122,96,168,.04) 100%);
+      animation: breathe 6s ease-in-out infinite;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .breathe-circle span {
+      font-family: 'Cinzel', serif; font-size: .58rem;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--violet-dk); opacity: .7;
+    }
+
+    /* ─── Prompt list ─── */
+    .prompt-list { list-style: none; display: flex; flex-direction: column; gap: .75rem; }
+    .prompt-list li {
+      background: var(--parchment-lt);
+      border: 1px solid rgba(122,96,168,.14);
+      border-left: 3px solid var(--violet);
+      border-radius: 0 3px 3px 0; padding: 1rem 1.3rem;
+      box-shadow: 0 2px 8px var(--shadow);
+    }
+    .prompt-list li strong {
+      display: block; font-family: 'Cinzel', serif;
+      font-size: .68rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--violet-dk); margin-bottom: .3rem;
+    }
+    .prompt-list li p { font-size: 1rem; color: var(--ink-2); line-height: 1.7; }
+
+    /* ─── Agreements ─── */
+    .agreements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+      gap: .7rem;
+    }
+    .agreement-item {
+      background: rgba(122,96,168,.06);
+      border: 1px solid rgba(122,96,168,.18);
+      border-radius: 3px; padding: .85rem 1rem;
+      font-family: 'Cinzel', serif; font-size: .7rem;
+      font-weight: 600; letter-spacing: .05em;
+      color: var(--ink-2); text-align: center; line-height: 1.55;
+    }
+    .ag-sym { color: var(--violet); display: block; margin-bottom: .3rem; font-size: .9rem; }
+
+    /* ─── Fac toggle ─── */
+    .fac-toggle {
+      background: rgba(58,138,138,.06);
+      border: 1px solid rgba(58,138,138,.2);
+      border-radius: 3px; overflow: hidden; margin-top: 1.2rem;
+    }
+    .fac-btn {
+      width: 100%; background: none; border: none;
+      padding: .7rem 1.1rem; text-align: left; cursor: pointer;
+      font-family: 'Cinzel', serif; font-size: .66rem;
+      font-weight: 700; letter-spacing: .1em;
+      color: var(--teal-dk);
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .fac-arrow { transition: transform .25s; display: inline-block; }
+    .fac-arrow.open { transform: rotate(90deg); }
+    .fac-content { display: none; padding: 0 1.1rem 1rem; font-size: .97rem; color: var(--ink-2); line-height: 1.8; }
+    .fac-content.open { display: block; animation: reveal .3s ease; }
+    .fac-content strong { color: var(--ink); }
+
+    /* ─── Reflection textarea ─── */
+    .reflection-area {
+      background: rgba(122,96,168,.05);
+      border: 1px dashed rgba(122,96,168,.28);
+      border-radius: 3px; padding: 1.3rem 1.5rem; margin-top: 1rem;
+    }
+    .reflection-area label {
+      display: block; font-family: 'Cinzel', serif;
+      font-size: .66rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--violet-dk); margin-bottom: .5rem;
+    }
+    .reflection-area textarea {
+      width: 100%; min-height: 80px;
+      background: rgba(255,255,255,.6);
+      border: 1px solid rgba(122,96,168,.22);
+      border-radius: 2px; padding: .65rem .85rem;
+      font-family: 'EB Garamond', serif; font-size: 1rem;
+      color: var(--ink); line-height: 1.7; resize: vertical;
+      transition: border-color .25s, box-shadow .25s, background .25s;
+    }
+    .reflection-area textarea:focus {
+      outline: none;
+      border-color: var(--violet);
+      background: rgba(255,255,255,.88);
+      box-shadow: 0 0 0 3px rgba(122,96,168,.1);
+    }
+    .reflection-area textarea::placeholder { color: var(--ink-3); font-style: italic; }
+
+    /* ─── Affirmation ─── */
+    .affirmation {
+      background: var(--blue-dk);
+      border-radius: 3px; padding: 2rem 2.5rem;
+      text-align: center; margin: 1.8rem 0;
+    }
+    .affirmation p {
+      font-family: 'Cinzel', serif; font-size: .95rem;
+      line-height: 1.8; color: var(--gold-pale); letter-spacing: .03em;
+    }
+
+    /* ─── Nav buttons ─── */
+    .nav-buttons {
+      display: flex; justify-content: space-between;
+      align-items: center; margin-top: 2.5rem; gap: 1rem;
+    }
+    .btn-nav {
+      font-family: 'Cinzel', serif; font-size: .66rem;
+      font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      padding: .65rem 1.6rem; border-radius: 2px; border: 1px solid; cursor: pointer;
+      transition: all .25s;
+    }
+    .btn-prev {
+      background: transparent; border-color: rgba(122,96,168,.3); color: var(--ink-3);
+    }
+    .btn-prev:hover { background: rgba(122,96,168,.08); border-color: var(--violet); color: var(--ink); }
+    .btn-next {
+      background: var(--blue-dk); border-color: var(--blue-dk);
+      color: var(--gold-pale);
+      box-shadow: 0 3px 12px rgba(26,20,32,.22);
+    }
+    .btn-next:hover {
+      background: var(--blue); transform: translateY(-1px);
+      box-shadow: 0 5px 18px rgba(26,20,32,.28);
+    }
+    .btn-nav:disabled { opacity: .3; pointer-events: none; }
+
+    /* ─── Footer ─── */
+    .site-footer {
+      text-align: center; padding: 1.8rem 1rem;
+      border-top: 1px solid rgba(122,96,168,.16);
+      font-family: 'Cinzel', serif; font-size: .58rem;
+      letter-spacing: .25em; text-transform: uppercase;
+      color: var(--ink-3); margin-top: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 0 1rem 4rem; }
+      .card { padding: 1.5rem; }
+      .skill-grid { grid-template-columns: 1fr; }
+      .agreements-grid { grid-template-columns: 1fr 1fr; }
+      body::after { inset: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glyph glyph-1" aria-hidden="true">✦</div>
+  <div class="glyph glyph-2" aria-hidden="true">◈</div>
+  <div class="glyph glyph-3" aria-hidden="true">✦</div>
+  <div class="glyph glyph-4" aria-hidden="true">◈</div>
+
+  <div class="container">
+
+    <!-- ══ HERO ══ -->
+    <header class="site-hero">
+      <span class="hero-eyebrow">DBT Skills Group &nbsp;·&nbsp; Mindfulness</span>
+      <h1 class="hero-title">Just <em>This</em></h1>
+      <p class="hero-sub">Mindful awareness and non-judgment</p>
+      <div class="hero-ornament">
+        <svg width="40" height="1" viewBox="0 0 40 1"><line x1="0" y1="0" x2="40" y2="0" stroke="currentColor" stroke-width="1"/></svg>
+        <span>✦</span>
+        <svg width="40" height="1" viewBox="0 0 40 1"><line x1="0" y1="0" x2="40" y2="0" stroke="currentColor" stroke-width="1"/></svg>
+      </div>
+    </header>
+
+    <!-- ══ PROGRESS STEPS ══ -->
+    <div class="progress-strip">
+      <div class="progress-step active" onclick="goTo(0)" id="step-0">
+        <div class="step-dot">I</div>
+        <span class="step-label">Welcome</span>
+      </div>
+      <div class="progress-step" onclick="goTo(1)" id="step-1">
+        <div class="step-dot">II</div>
+        <span class="step-label">Wise<br>Mind</span>
+      </div>
+      <div class="progress-step" onclick="goTo(2)" id="step-2">
+        <div class="step-dot">III</div>
+        <span class="step-label">The<br>Skills</span>
+      </div>
+      <div class="progress-step" onclick="goTo(3)" id="step-3">
+        <div class="step-dot">IV</div>
+        <span class="step-label">Non-<br>Judgment</span>
+      </div>
+      <div class="progress-step" onclick="goTo(4)" id="step-4">
+        <div class="step-dot">V</div>
+        <span class="step-label">Discussion</span>
+      </div>
+      <div class="progress-step" onclick="goTo(5)" id="step-5">
+        <div class="step-dot">VI</div>
+        <span class="step-label">Closing</span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SECTION I — WELCOME
+    ══════════════════════════════════ -->
+    <div class="section active" id="sec-0">
+
+      <div class="card calm card-hero">
+        <p style="font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--violet);margin-bottom:1.3rem;">Mindfulness Core Skills</p>
+        <div class="pull-quote" style="margin:0 0 1.5rem;">
+          <p>Mindfulness is not about emptying your mind. It's about noticing what's already there, without turning it into a verdict.</p>
+        </div>
+        <p class="body-text" style="text-align:left;">DBT's mindfulness skills are the foundation everything else builds on. They don't require you to be calm, spiritual, or good at sitting still. They just ask you to look at what's happening right now, as clearly as you can, without adding a layer of judgment on top of it.</p>
+        <p class="body-text" style="text-align:left;">Today we're focusing on two things: <strong>awareness</strong> (what you notice) and <strong>non-judgment</strong> (how you hold what you notice). Both are learnable. Both take practice. Neither requires perfection.</p>
+      </div>
+
+      <div class="card violet">
+        <div class="card-header">
+          <div class="icon-badge ib-violet">◈</div>
+          <h2>Group Agreements</h2>
+        </div>
+        <div class="callout violet" style="margin-bottom:1.2rem;">
+          <span class="callout-label">Confidentiality</span>
+          <p>What is shared in this group stays in this group. <strong>This is not optional.</strong> Names, stories, and personal disclosures belong to the people who shared them and do not leave this room in any form.</p>
+        </div>
+        <div class="agreements-grid">
+          <div class="agreement-item"><span class="ag-sym">◇</span>You can always pass</div>
+          <div class="agreement-item"><span class="ag-sym">◇</span>Speak from your experience</div>
+          <div class="agreement-item"><span class="ag-sym">◇</span>No advice unless asked</div>
+          <div class="agreement-item"><span class="ag-sym">◇</span>Judgment-free zone</div>
+          <div class="agreement-item"><span class="ag-sym">◇</span>All experiences welcome</div>
+          <div class="agreement-item"><span class="ag-sym">◇</span>Distraction is okay today</div>
+        </div>
+      </div>
+
+      <div class="card teal">
+        <div class="card-header">
+          <div class="icon-badge ib-teal">✦</div>
+          <h2>Opening Practice</h2>
+          <span class="time-pill">5 min</span>
+        </div>
+        <p class="body-text">Before we talk about mindfulness, let's do a small amount of it. We'll use the breath, not because it's special, but because it's always available.</p>
+
+        <div class="breathe-circle"><span>breathe</span></div>
+
+        <div class="practice-block">
+          <span class="practice-label">One Minute Together</span>
+          <p>Find a position that feels okay for your body. You don't have to close your eyes. Notice the sensation of one breath: air coming in, a brief pause, air going out. When your attention wanders (and it will), just notice that it wandered and bring it back. No score-keeping. Just returning.</p>
+          <p><strong>That returning? That's the practice.</strong> Not the stillness. The return.</p>
+        </div>
+
+        <div class="fac-toggle">
+          <button class="fac-btn" onclick="toggleFac(this)">
+            <span class="fac-arrow">▶</span>
+            FACILITATOR NOTE — OPENING PRACTICE
+          </button>
+          <div class="fac-content">
+            <p>Keep this brief — 60 to 90 seconds. After, ask: <strong>"What did you notice?"</strong> Don't push for deep observations. "My mind wandered" is a perfect answer. Affirm the noticing, not the stillness.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card blue">
+        <div class="card-header">
+          <div class="icon-badge ib-blue">✦</div>
+          <h2>Check-In Circle</h2>
+          <span class="time-pill">8 min</span>
+        </div>
+        <div class="pass-note">
+          <span class="pass-sym">◇</span>
+          <span>One word is enough. Listening counts as full participation.</span>
+        </div>
+        <div class="info-block ib-blue">
+          <h3>Choose One</h3>
+          <ul>
+            <li>One word for where you are right now, no explanation needed</li>
+            <li>Something you noticed during the opening practice</li>
+            <li>What you're hoping to get from today, even if it's small</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn-nav btn-prev" disabled>← Back</button>
+        <button class="btn-nav btn-next" onclick="goTo(1)">Wise Mind →</button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SECTION II — WISE MIND
+    ══════════════════════════════════ -->
+    <div class="section" id="sec-1">
+
+      <div class="card violet">
+        <div class="card-header">
+          <div class="icon-badge ib-violet">🧠</div>
+          <h2>Three States of Mind</h2>
+          <span class="time-pill">10 min</span>
+        </div>
+        <p class="body-text">In DBT, we talk about three states of mind. Most of us spend time in all three. None of them is wrong. But one of them is where mindfulness is trying to take us.</p>
+
+        <div class="minds-row">
+          <div class="mind-node mn-emotion">
+            <span class="mind-node-label">Emotion Mind</span>
+            <div class="mind-node-name">Feeling Is Fact</div>
+            <div class="mind-node-desc">Emotions drive thinking and behavior. "I feel it, so it must be true." Intense, reactive, sometimes overwhelming.</div>
+          </div>
+          <div class="minds-arrow">+</div>
+          <div class="mind-node mn-wise">
+            <span class="mind-node-label">Wise Mind</span>
+            <div class="mind-node-name">Both, Together</div>
+            <div class="mind-node-desc">The overlap of feeling and logic. Knows what is true and what matters. Quieter, but it's always there.</div>
+          </div>
+          <div class="minds-arrow">+</div>
+          <div class="mind-node mn-reason">
+            <span class="mind-node-label">Reasonable Mind</span>
+            <div class="mind-node-name">Logic Is Everything</div>
+            <div class="mind-node-desc">Analytical, cool, fact-focused. "Feelings are not relevant. Just look at the data." Can dismiss what's real.</div>
+          </div>
+        </div>
+
+        <div class="callout violet">
+          <span class="callout-label">What Wise Mind Feels Like</span>
+          <p>It tends to feel quieter than Emotion Mind and warmer than Reasonable Mind. Some people describe it as a sense of "settling." It's not always easy to find, but mindfulness is one of the main ways to get there.</p>
+        </div>
+
+        <div class="reflection-area">
+          <label>When Have You Been in Wise Mind?</label>
+          <textarea placeholder="A moment when you just knew the right thing, even if it was hard. Or when something felt settled rather than urgent…"></textarea>
+        </div>
+
+        <div class="fac-toggle">
+          <button class="fac-btn" onclick="toggleFac(this)">
+            <span class="fac-arrow">▶</span>
+            FACILITATOR NOTE — WISE MIND
+          </button>
+          <div class="fac-content">
+            <p>Some people resist the idea that they have a Wise Mind at all, especially if they've been told their instincts are wrong. Affirm: <strong>"It may be harder to access for some of us, especially if our environment never made it safe to trust ourselves. That doesn't mean it isn't there."</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn-nav btn-prev" onclick="goTo(0)">← Welcome</button>
+        <button class="btn-nav btn-next" onclick="goTo(2)">The Skills →</button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SECTION III — THE SKILLS
+    ══════════════════════════════════ -->
+    <div class="section" id="sec-2">
+
+      <div class="card calm">
+        <div class="card-header">
+          <div class="icon-badge ib-calm">✦</div>
+          <h2>The Mindfulness Skills</h2>
+          <span class="time-pill">15 min</span>
+        </div>
+        <p class="body-text">DBT breaks mindfulness into two sets: <strong>What skills</strong> (what you do when you practice) and <strong>How skills</strong> (how you do it). Together they describe a complete practice.</p>
+      </div>
+
+      <div class="ornament-divider"><span>what skills</span></div>
+
+      <div class="skill-grid">
+        <div class="sc sc-blue">
+          <div class="sc-top"><span class="sc-emoji">👁</span><h3>Observe</h3></div>
+          <div class="sc-body">
+            Notice your experience without trying to change it or push it away. Watch thoughts like clouds passing through. Watch sensations without immediately reacting to them.
+            <em>"I notice tension in my chest." Not: "My chest is tight and something is wrong."</em>
+          </div>
+        </div>
+        <div class="sc sc-violet">
+          <div class="sc-top"><span class="sc-emoji">📝</span><h3>Describe</h3></div>
+          <div class="sc-body">
+            Put words on what you observe, sticking to facts. Describe the experience, not your interpretation of it. This is harder than it sounds.
+            <em>"I'm having the thought that I'm not good enough." Not: "I'm not good enough."</em>
+          </div>
+        </div>
+        <div class="sc sc-teal">
+          <div class="sc-top"><span class="sc-emoji">🌊</span><h3>Participate</h3></div>
+          <div class="sc-body">
+            Throw yourself fully into what you're doing. Stop standing outside your life and observing it from a distance. Participate without self-consciousness.
+            <em>Dancing, cooking, a conversation, a task, fully in it. Not watching yourself do it.</em>
+          </div>
+        </div>
+      </div>
+
+      <div class="ornament-divider"><span>how skills</span></div>
+
+      <div class="skill-grid">
+        <div class="sc sc-violet">
+          <div class="sc-top"><span class="sc-emoji">⚖️</span><h3>Non-Judgmentally</h3></div>
+          <div class="sc-body">
+            Stick to the facts. Describe without evaluating. "Good," "bad," "should," "shouldn't" are judgments. Notice them when they show up and see if you can put them down.
+            <em>Not pretending things don't hurt. Describing what happened without adding a verdict.</em>
+          </div>
+        </div>
+        <div class="sc sc-blue">
+          <div class="sc-top"><span class="sc-emoji">🎯</span><h3>One-Mindfully</h3></div>
+          <div class="sc-body">
+            Do one thing at a time. When you're eating, eat. When you're listening, listen. When your mind pulls elsewhere, gently return. This is the core gesture of mindfulness.
+            <em>Not multitasking. Not rehearsing tomorrow while living today.</em>
+          </div>
+        </div>
+        <div class="sc sc-teal">
+          <div class="sc-top"><span class="sc-emoji">🔧</span><h3>Effectively</h3></div>
+          <div class="sc-body">
+            Do what works for the situation, not what feels right or fair. Let go of "I shouldn't have to" in favor of what actually moves things forward. Play the hand you have.
+            <em>Not giving up your values. Choosing behavior that serves your actual goals.</em>
+          </div>
+        </div>
+      </div>
+
+      <div class="practice-block">
+        <span class="practice-label">Quick Practice: Observe and Describe</span>
+        <p>Look at your hands for 30 seconds. Observe without judgment. Then, in your head or out loud, describe what you see sticking only to facts: color, texture, shape, any sensations. Notice when you slip into evaluation ("my hands look old," "my skin is bad") and see if you can swap it for description ("there are lines across the knuckles," "the skin is warm").</p>
+        <p><strong>The goal is not to feel neutral about your hands. It's to notice the difference between describing and judging.</strong></p>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn-nav btn-prev" onclick="goTo(1)">← Wise Mind</button>
+        <button class="btn-nav btn-next" onclick="goTo(3)">Non-Judgment →</button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SECTION IV — NON-JUDGMENT
+    ══════════════════════════════════ -->
+    <div class="section" id="sec-3">
+
+      <div class="card rose">
+        <div class="card-header">
+          <div class="icon-badge ib-rose">⚖️</div>
+          <h2>Non-Judgment: What It Is and Isn't</h2>
+          <span class="time-pill">15 min</span>
+        </div>
+        <p class="body-text">Non-judgment is one of the most misunderstood DBT skills. People often think it means pretending nothing is wrong, approving of everything, or becoming emotionally flat. None of that is true.</p>
+
+        <div class="info-block ib-rose">
+          <h3>Non-Judgment Is NOT</h3>
+          <ul>
+            <li>Approving of things that hurt you</li>
+            <li>Pretending painful things don't hurt</li>
+            <li>Saying everything is fine when it isn't</li>
+            <li>Suppressing your feelings or opinions</li>
+            <li>Excusing behavior that caused harm</li>
+          </ul>
+        </div>
+
+        <div class="info-block ib-teal">
+          <h3>Non-Judgment IS</h3>
+          <ul>
+            <li>Describing what happened without adding a verdict</li>
+            <li>Separating the facts of a situation from your interpretation</li>
+            <li>Noticing judgment when it shows up, without judging yourself for judging</li>
+            <li>Releasing the layer of "should" that lives on top of pain and makes it heavier</li>
+            <li>Treating yourself with the same observational curiosity you'd offer a good friend</li>
+          </ul>
+        </div>
+
+        <div class="callout violet">
+          <span class="callout-label">The Core Shift</span>
+          <p>Judgment doesn't just describe reality. It <strong>amplifies suffering.</strong> "I'm having a hard day" and "I'm a disaster who can't handle anything" describe the same morning, but they don't feel the same. The second one is a judgment chain, and it creates a whole second layer of pain on top of the first.</p>
+        </div>
+      </div>
+
+      <div class="ornament-divider"><span>judgment vs. description</span></div>
+
+      <div class="card blue">
+        <div class="card-header">
+          <div class="icon-badge ib-blue">📋</div>
+          <h2>Putting It into Words</h2>
+        </div>
+        <p class="body-text">The difference between a judgment and a description is concrete. Here's what it looks like in practice:</p>
+
+        <table class="jd-table">
+          <thead>
+            <tr>
+              <th class="jd-j">Judgment</th>
+              <th class="jd-d">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="jd-j">"I'm a failure."</td>
+              <td class="jd-d">"I didn't meet the deadline I set."</td>
+            </tr>
+            <tr>
+              <td class="jd-j">"I'm so stupid."</td>
+              <td class="jd-d">"I made an error I wish I hadn't made."</td>
+            </tr>
+            <tr>
+              <td class="jd-j">"They're a terrible person."</td>
+              <td class="jd-d">"They said something that hurt me."</td>
+            </tr>
+            <tr>
+              <td class="jd-j">"I should be over this by now."</td>
+              <td class="jd-d">"I'm still feeling this. That's where I am."</td>
+            </tr>
+            <tr>
+              <td class="jd-j">"This is pointless."</td>
+              <td class="jd-d">"I'm not seeing progress yet and that's frustrating."</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="reflection-area">
+          <label>A Judgment You've Been Carrying</label>
+          <textarea placeholder="Write a judgment you hold about yourself or a situation. Then, below it, see if you can rewrite it as a description — just the facts, without the verdict…"></textarea>
+        </div>
+
+        <div class="fac-toggle">
+          <button class="fac-btn" onclick="toggleFac(this)">
+            <span class="fac-arrow">▶</span>
+            FACILITATOR NOTE — NON-JUDGMENT
+          </button>
+          <div class="fac-content">
+            <p>Watch for the belief that non-judgment means weakness or self-excuse. A useful reframe: <strong>"Non-judgment actually takes more strength than judgment. Judgment is quick. Describing carefully and staying with what's real takes more work."</strong></p>
+            <p style="margin-top:.6rem;">If someone shares a heavy self-judgment in the reflection, don't rush to fix or reframe it for them. Ask: <strong>"What would it look like to describe that without the verdict?"</strong> Let them find the language.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn-nav btn-prev" onclick="goTo(2)">← The Skills</button>
+        <button class="btn-nav btn-next" onclick="goTo(4)">Discussion →</button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SECTION V — DISCUSSION
+    ══════════════════════════════════ -->
+    <div class="section" id="sec-4">
+
+      <div class="card violet">
+        <div class="card-header">
+          <div class="icon-badge ib-violet">💬</div>
+          <h2>Group Discussion</h2>
+          <span class="time-pill">20 min</span>
+        </div>
+        <div class="pass-note">
+          <span class="pass-sym">◇</span>
+          <span>These are invitations, not obligations. You can pass any time.</span>
+        </div>
+        <ul class="prompt-list">
+          <li>
+            <strong>Opening Round</strong>
+            <p>What state of mind do you find yourself in most often — Emotion Mind, Reasonable Mind, or somewhere in between? What does it feel like when you're there?</p>
+          </li>
+          <li>
+            <strong>The Skills</strong>
+            <p>Which of the six skills (Observe, Describe, Participate, Non-Judgmentally, One-Mindfully, Effectively) feels most natural to you? Which one is the biggest stretch?</p>
+          </li>
+          <li>
+            <strong>Non-Judgment</strong>
+            <p>Where is judgment hardest to put down in your own life? Toward yourself, toward others, or toward situations? What does the judgment sound like when it shows up?</p>
+          </li>
+          <li>
+            <strong>The Returning</strong>
+            <p>During the opening practice, attention probably wandered. What was it like to notice that and come back? Was there judgment in the noticing?</p>
+          </li>
+          <li>
+            <strong>Wise Mind</strong>
+            <p>Can you think of a time when you were in Wise Mind — when something felt settled or clear rather than urgent? What helped you get there?</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="fac-toggle" style="margin-bottom:1.8rem;">
+        <button class="fac-btn" onclick="toggleFac(this)">
+          <span class="fac-arrow">▶</span>
+          FACILITATOR NOTE — MANAGING THE DISCUSSION
+        </button>
+        <div class="fac-content">
+          <p>If someone is self-judging heavily during the discussion (about their mindfulness practice, their mind wandering, their inability to stay present), gently name it: <strong>"Notice that what just happened there is exactly what we're practicing with — can we look at that judgment without adding more on top of it?"</strong></p>
+          <p style="margin-top:.6rem;">Avoid praising people for being "good at mindfulness." The practice is not about performance.</p>
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn-nav btn-prev" onclick="goTo(3)">← Non-Judgment</button>
+        <button class="btn-nav btn-next" onclick="goTo(5)">Closing →</button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SECTION VI — CLOSING
+    ══════════════════════════════════ -->
+    <div class="section" id="sec-5">
+
+      <div class="card calm">
+        <div class="card-header">
+          <div class="icon-badge ib-calm">✦</div>
+          <h2>Closing Practice</h2>
+          <span class="time-pill">5 min</span>
+        </div>
+        <p class="body-text">One more breath together before we close. This time, after you notice the breath, bring to mind one thing from today and just observe it. No verdict. No plan. Just notice that it's there.</p>
+
+        <div class="breathe-circle"><span>notice</span></div>
+
+        <div class="fac-toggle">
+          <button class="fac-btn" onclick="toggleFac(this)">
+            <span class="fac-arrow">▶</span>
+            FACILITATOR NOTE — CLOSING PRACTICE
+          </button>
+          <div class="fac-content">
+            <p>Keep this to 60 seconds. After: <strong>"One word for what you're leaving with today?"</strong> Go around. Short is fine. The word doesn't have to be positive.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card teal">
+        <div class="card-header">
+          <div class="icon-badge ib-teal">◈</div>
+          <h2>Between Now and Next Time</h2>
+        </div>
+        <div class="info-block ib-teal">
+          <h3>Small Invitations: Choose What Fits</h3>
+          <ul>
+            <li>Pick one daily activity (brushing teeth, making coffee, walking) and do it one-mindfully for one week. When you wander, just return.</li>
+            <li>Notice three judgments this week. Write them down. Then rewrite each one as a description.</li>
+            <li>Check in with Wise Mind once before making a decision. Ask: "What does the part of me that is both feeling and thinking say?"</li>
+            <li>Use the Observe skill for one difficult emotion: watch it like weather rather than becoming it.</li>
+          </ul>
+        </div>
+
+        <div class="reflection-area">
+          <label>One Thing You're Taking With You</label>
+          <textarea placeholder="A word, a shift, a question, whatever came through today…"></textarea>
+        </div>
+      </div>
+
+      <div class="pull-quote">
+        <p>The mind wanders. You return. That's not failure. That's the whole practice.</p>
+        <cite>DBT Mindfulness &nbsp;·&nbsp; Just This</cite>
+      </div>
+
+      <div class="affirmation">
+        <p>You noticed something today.<br>That is mindfulness. That is enough.</p>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn-nav btn-prev" onclick="goTo(4)">← Discussion</button>
+        <button class="btn-nav btn-next" disabled>Complete ✦</button>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      DBT Skills Group &nbsp;·&nbsp; Mindfulness &nbsp;·&nbsp; Mindful Awareness and Non-Judgment
+    </footer>
+
+  </div>
+
+  <script>
+    const SECTIONS = ['sec-0','sec-1','sec-2','sec-3','sec-4','sec-5'];
+
+    function goTo(index) {
+      SECTIONS.forEach((id, i) => {
+        document.getElementById(id).classList.remove('active');
+        const step = document.getElementById('step-' + i);
+        step.classList.remove('active', 'done');
+        if (i < index)  step.classList.add('done');
+        if (i === index) step.classList.add('active');
+      });
+      document.getElementById(SECTIONS[index]).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleFac(btn) {
+      const arrow   = btn.querySelector('.fac-arrow');
+      const content = btn.nextElementSibling;
+      arrow.classList.toggle('open');
+      content.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
